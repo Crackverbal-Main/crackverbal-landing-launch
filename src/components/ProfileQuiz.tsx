@@ -5,7 +5,7 @@ import { HelpCircle } from 'lucide-react';
 
 const ProfileQuiz = () => {
   return (
-    <section id="quiz" className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <section id="quiz" className="py-16 bg-gradient-to-br from-primary to-primary/80 text-white">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex justify-center mb-6">
@@ -20,7 +20,7 @@ const ProfileQuiz = () => {
             Answer 7 questions, get a custom GMAT + MBA roadmap.
           </p>
 
-          <Button className="bg-white text-blue-700 hover:bg-gray-100">
+          <Button className="bg-white text-primary hover:bg-white/90">
             Start the 3-Minute Quiz
           </Button>
         </div>

@@ -28,11 +28,15 @@ const HeroSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formStep === 1) {
+      if (!formData.phone) {
+        alert("Please enter your phone number");
+        return;
+      }
       setFormStep(2);
     } else {
+      // Form submission logic
       console.log('Form submitted:', formData);
-      // Here you would submit the form data to your backend
-      alert('Thank you! Your study plan will be sent to your email shortly.');
+      alert("Thank you! Your study plan will be sent shortly.");
       setFormStep(1);
       setFormData({
         name: '',
@@ -61,11 +65,11 @@ const HeroSection = () => {
           <ul className="space-y-3">
             <li className="flex items-start">
               <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">95% success rate across 30k+ students</span>
+              <span className="text-lg">Trained over 30k students</span>
             </li>
             <li className="flex items-start">
               <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">Guidance from Arun Jagannathan, India's GMAT authority</span>
+              <span className="text-lg">Guidance from Arun Jagannathan, Co-Founder and Chief Mentor</span>
             </li>
             <li className="flex items-start">
               <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
@@ -73,10 +77,17 @@ const HeroSection = () => {
             </li>
           </ul>
 
-          <blockquote className="italic text-lg border-l-4 border-primary pl-4 py-2">
-            "GMAT success isn't magic; it's a skill-set anyone can master with the right playbook."
-            <footer className="text-gray-600 mt-2">— Arun Jagannathan, Founder & 770 scorer</footer>
-          </blockquote>
+          <div className="flex items-start space-x-4">
+            <img 
+              src="/lovable-uploads/97a4aab2-c4be-41e0-aca9-88e011385c1f.png" 
+              alt="Arun Jagannathan" 
+              className="w-16 h-16 rounded-full object-cover" 
+            />
+            <blockquote className="italic text-lg">
+              "GMAT success isn't magic; it's a skill-set anyone can master with the right playbook."
+              <footer className="text-gray-600 not-italic mt-1">— Arun Jagannathan, Co-Founder and Chief Mentor</footer>
+            </blockquote>
+          </div>
         </div>
 
         {/* Right Column - Form */}
@@ -113,10 +124,11 @@ const HeroSection = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone (optional)</Label>
+                    <Label htmlFor="phone">Phone <span className="text-primary">*</span></Label>
                     <Input 
                       id="phone"
                       name="phone"
+                      required
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Your phone number"

@@ -10,13 +10,13 @@ const ResultsStrip = () => {
           <div className="flex flex-col items-center">
             <Users className="h-10 w-10 mb-3" />
             <h3 className="text-3xl font-bold mb-1">30,000+</h3>
-            <p className="text-lg">Success Stories</p>
+            <p className="text-lg">Students Trained</p>
           </div>
           
           <div className="flex flex-col items-center">
             <Award className="h-10 w-10 mb-3" />
-            <h3 className="text-3xl font-bold mb-1">1,200+</h3>
-            <p className="text-lg">Admits to M7/INSEAD</p>
+            <h3 className="text-3xl font-bold mb-1">112+</h3>
+            <p className="text-lg">Admits to B-schools Worldwide</p>
           </div>
           
           <div className="flex flex-col items-center">

@@ -8,8 +8,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       <div className="container flex justify-between items-center py-3">
         <div className="flex items-center">
-          <a href="/" className="text-2xl font-bold text-primary">
-            CrackVerbal
+          <a href="/" className="text-2xl font-bold">
+            <img src="/lovable-uploads/97a4aab2-c4be-41e0-aca9-88e011385c1f.png" alt="CrackVerbal Logo" className="h-12" />
           </a>
         </div>
         
