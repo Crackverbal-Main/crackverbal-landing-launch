@@ -49,12 +49,12 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="pt-24 pb-12">
+    <section id="hero" className="pt-24 pb-12 bg-gradient-to-br from-white to-blue-50">
       <div className="container flex flex-col-reverse md:flex-row items-center gap-8">
         {/* Left Column */}
-        <div className="w-full md:w-3/5 space-y-8">
+        <div className="w-full md:w-3/5 space-y-8 animate-fade-in">
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Master the GMAT with Personalized Strategy
             </h1>
             <p className="text-xl text-gray-600">
@@ -62,26 +62,26 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <ul className="space-y-3">
-            <li className="flex items-start">
-              <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">30k+ Students Trained</span>
-            </li>
-            <li className="flex items-start">
-              <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">Mentored by GMAT Experts</span>
-            </li>
-            <li className="flex items-start">
-              <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">Instant Study Plan</span>
-            </li>
+          <ul className="space-y-4">
+            {[
+              { text: "30k+ Students Trained" },
+              { text: "Mentored by GMAT Experts" },
+              { text: "Instant Study Plan" },
+            ].map((item, index) => (
+              <li key={index} className="flex items-start transition-all duration-300 hover:translate-x-1">
+                <div className="flex justify-center items-center bg-primary/10 rounded-full p-1 mr-3">
+                  <Check className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-lg">{item.text}</span>
+              </li>
+            ))}
           </ul>
 
-          <div className="flex items-start space-x-4">
+          <div className="flex items-start space-x-4 p-4 bg-white/70 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100">
             <img 
               src="/lovable-uploads/97a4aab2-c4be-41e0-aca9-88e011385c1f.png" 
               alt="Arun Jagannathan" 
-              className="w-16 h-16 rounded-full object-cover" 
+              className="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20" 
             />
             <blockquote className="italic text-lg">
               "GMAT success is a learnable skill."
@@ -91,11 +91,11 @@ const HeroSection = () => {
         </div>
 
         {/* Right Column - Form */}
-        <div className="w-full md:w-2/5">
-          <div className="bg-white rounded-xl shadow-xl p-6">
-            <h3 className="text-xl font-bold mb-4">Get Your Fast-Track Plan</h3>
+        <div className="w-full md:w-2/5 animate-fade-in">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h3 className="text-xl font-bold mb-6 text-center">Get Your Fast-Track Plan</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
               {formStep === 1 ? (
                 <>
                   <div className="space-y-2">
@@ -107,6 +107,7 @@ const HeroSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your full name"
+                      className="focus:ring-2 focus:ring-primary/30 transition-all"
                     />
                   </div>
                   
@@ -120,6 +121,7 @@ const HeroSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Your email address"
+                      className="focus:ring-2 focus:ring-primary/30 transition-all"
                     />
                   </div>
                   
@@ -132,6 +134,7 @@ const HeroSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Your phone number"
+                      className="focus:ring-2 focus:ring-primary/30 transition-all"
                     />
                   </div>
                 </>
@@ -143,7 +146,7 @@ const HeroSection = () => {
                       onValueChange={(value) => handleSelectChange('workExperience', value)}
                       value={formData.workExperience}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="focus:ring-2 focus:ring-primary/30 transition-all">
                         <SelectValue placeholder="Select years of experience" />
                       </SelectTrigger>
                       <SelectContent>
@@ -161,7 +164,7 @@ const HeroSection = () => {
                       onValueChange={(value) => handleSelectChange('targetMonth', value)}
                       value={formData.targetMonth}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="focus:ring-2 focus:ring-primary/30 transition-all">
                         <SelectValue placeholder="When do you plan to take the test?" />
                       </SelectTrigger>
                       <SelectContent>
@@ -175,7 +178,10 @@ const HeroSection = () => {
                 </>
               )}
 
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 mt-2">
+              <Button 
+                type="submit" 
+                className="w-full mt-4 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+              >
                 {formStep === 1 ? (
                   <span className="flex items-center">
                     Continue <ArrowRight className="ml-2 h-4 w-4" />
@@ -193,4 +199,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

@@ -34,7 +34,7 @@ const WhySection = () => {
   ];
 
   return (
-    <section id="why" className="py-16">
+    <section id="why" className="py-16 bg-white">
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-4">Why CrackVerbal?</h2>
         <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -43,11 +43,14 @@ const WhySection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="text-center">
-              <div className="mx-auto mb-4 bg-gray-50 p-4 rounded-full inline-flex items-center justify-center">
+            <div 
+              key={index} 
+              className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors duration-300"
+            >
+              <div className="mx-auto mb-5 bg-blue-50 p-5 rounded-full inline-flex items-center justify-center shadow-sm">
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}

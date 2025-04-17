@@ -56,7 +56,7 @@ const ComparisonTable = () => {
     if (content === 'None' || content === 'Mixed' || content === 'Limited' || content === 'One-size' || content === 'Automated' || content === 'Days' || content === 'Generalists' || content === 'Partial' || content === 'Basic') {
       return (
         <div className="flex items-center">
-          <X className="h-5 w-5 text-gray-400 mr-2" />
+          <X className="h-5 w-5 text-red-400 mr-2" />
           <span>{content}</span>
         </div>
       );
@@ -77,26 +77,29 @@ const ComparisonTable = () => {
   return (
     <section id="compare" className="py-16 bg-gray-50">
       <div className="container">
-        <h2 className="text-3xl font-bold text-center mb-12">How CrackVerbal Stands Out</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">How CrackVerbal Stands Out</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          See why our approach delivers more consistent results than alternatives
+        </p>
         
         {/* Desktop Table (hidden on mobile) */}
-        <div className="hidden md:block overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead className="bg-white sticky top-0">
+        <div className="hidden md:block overflow-x-auto rounded-xl shadow-lg">
+          <table className="w-full border-collapse bg-white">
+            <thead className="bg-gray-50 sticky top-0">
               <tr>
-                <th className="p-4 text-left border-b border-gray-200 font-semibold">Feature</th>
-                <th className="p-4 text-left border-b border-gray-200 font-semibold bg-blue-50">CrackVerbal</th>
-                <th className="p-4 text-left border-b border-gray-200 font-semibold">Online Video Courses</th>
-                <th className="p-4 text-left border-b border-gray-200 font-semibold">Generic Tutors</th>
+                <th className="p-5 text-left border-b border-gray-200 font-semibold">Feature</th>
+                <th className="p-5 text-left border-b border-gray-200 font-semibold bg-blue-50">CrackVerbal</th>
+                <th className="p-5 text-left border-b border-gray-200 font-semibold">Online Video Courses</th>
+                <th className="p-5 text-left border-b border-gray-200 font-semibold">Generic Tutors</th>
               </tr>
             </thead>
             <tbody>
               {comparisonData.map((row, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="p-4 border-b border-gray-200 font-medium">{row.feature}</td>
-                  <td className="p-4 border-b border-gray-200 bg-blue-50">{renderCellContent(row.crackverbal, true)}</td>
-                  <td className="p-4 border-b border-gray-200">{renderCellContent(row.videoCourses)}</td>
-                  <td className="p-4 border-b border-gray-200">{renderCellContent(row.tutors)}</td>
+                <tr key={index} className="hover:bg-gray-50 transition-colors">
+                  <td className="p-5 border-b border-gray-200 font-medium">{row.feature}</td>
+                  <td className="p-5 border-b border-gray-200 bg-blue-50">{renderCellContent(row.crackverbal, true)}</td>
+                  <td className="p-5 border-b border-gray-200">{renderCellContent(row.videoCourses)}</td>
+                  <td className="p-5 border-b border-gray-200">{renderCellContent(row.tutors)}</td>
                 </tr>
               ))}
             </tbody>
@@ -106,7 +109,7 @@ const ComparisonTable = () => {
         {/* Mobile Accordion (hidden on desktop) */}
         <div className="md:hidden space-y-4">
           <div 
-            className={`border rounded-lg overflow-hidden ${openSection === 'crackverbal' ? 'border-primary' : 'border-gray-200'}`}
+            className={`border rounded-xl overflow-hidden ${openSection === 'crackverbal' ? 'border-primary shadow-md' : 'border-gray-200'}`}
           >
             <button 
               className={`w-full p-4 flex justify-between items-center ${openSection === 'crackverbal' ? 'bg-blue-50' : 'bg-white'}`}
@@ -118,8 +121,8 @@ const ComparisonTable = () => {
             {openSection === 'crackverbal' && (
               <div className="p-4 bg-white">
                 {comparisonData.map((row, index) => (
-                  <div key={index} className="py-2 border-b border-gray-100 last:border-0">
-                    <p className="text-sm text-gray-500">{row.feature}</p>
+                  <div key={index} className="py-3 border-b border-gray-100 last:border-0">
+                    <p className="text-sm text-gray-500 mb-1">{row.feature}</p>
                     <div className="mt-1">{renderCellContent(row.crackverbal, true)}</div>
                   </div>
                 ))}
@@ -128,7 +131,7 @@ const ComparisonTable = () => {
           </div>
 
           <div 
-            className={`border rounded-lg overflow-hidden ${openSection === 'videoCourses' ? 'border-primary' : 'border-gray-200'}`}
+            className={`border rounded-xl overflow-hidden ${openSection === 'videoCourses' ? 'border-primary shadow-md' : 'border-gray-200'}`}
           >
             <button 
               className={`w-full p-4 flex justify-between items-center ${openSection === 'videoCourses' ? 'bg-blue-50' : 'bg-white'}`}
@@ -140,8 +143,8 @@ const ComparisonTable = () => {
             {openSection === 'videoCourses' && (
               <div className="p-4 bg-white">
                 {comparisonData.map((row, index) => (
-                  <div key={index} className="py-2 border-b border-gray-100 last:border-0">
-                    <p className="text-sm text-gray-500">{row.feature}</p>
+                  <div key={index} className="py-3 border-b border-gray-100 last:border-0">
+                    <p className="text-sm text-gray-500 mb-1">{row.feature}</p>
                     <div className="mt-1">{renderCellContent(row.videoCourses)}</div>
                   </div>
                 ))}
@@ -150,7 +153,7 @@ const ComparisonTable = () => {
           </div>
 
           <div 
-            className={`border rounded-lg overflow-hidden ${openSection === 'tutors' ? 'border-primary' : 'border-gray-200'}`}
+            className={`border rounded-xl overflow-hidden ${openSection === 'tutors' ? 'border-primary shadow-md' : 'border-gray-200'}`}
           >
             <button 
               className={`w-full p-4 flex justify-between items-center ${openSection === 'tutors' ? 'bg-blue-50' : 'bg-white'}`}
@@ -162,8 +165,8 @@ const ComparisonTable = () => {
             {openSection === 'tutors' && (
               <div className="p-4 bg-white">
                 {comparisonData.map((row, index) => (
-                  <div key={index} className="py-2 border-b border-gray-100 last:border-0">
-                    <p className="text-sm text-gray-500">{row.feature}</p>
+                  <div key={index} className="py-3 border-b border-gray-100 last:border-0">
+                    <p className="text-sm text-gray-500 mb-1">{row.feature}</p>
                     <div className="mt-1">{renderCellContent(row.tutors)}</div>
                   </div>
                 ))}
@@ -172,8 +175,10 @@ const ComparisonTable = () => {
           </div>
         </div>
 
-        <div className="text-center mt-8">
-          <Button className="bg-primary hover:bg-primary/90">Book a 15-min Strategy Call</Button>
+        <div className="text-center mt-10">
+          <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity px-6 py-2.5 text-lg">
+            Book a 15-min Strategy Call
+          </Button>
         </div>
       </div>
     </section>
