@@ -55,25 +55,25 @@ const HeroSection = () => {
         <div className="w-full md:w-3/5 space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Crack the GMAT—on a schedule that works for you.
+              Master the GMAT with Personalized Strategy
             </h1>
             <p className="text-xl text-gray-600">
-              Personalised strategy • Flexible timetable • Proven 99ᵗʰ‑percentile techniques
+              99th-percentile techniques • Flexible learning • Proven results
             </p>
           </div>
 
           <ul className="space-y-3">
             <li className="flex items-start">
               <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">Trained over 30k students</span>
+              <span className="text-lg">30k+ Students Trained</span>
             </li>
             <li className="flex items-start">
               <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">Guidance from Arun Jagannathan, Co-Founder and Chief Mentor</span>
+              <span className="text-lg">Mentored by GMAT Experts</span>
             </li>
             <li className="flex items-start">
               <Check className="h-6 w-6 text-primary mr-2 mt-0.5" />
-              <span className="text-lg">Fast-Track study plan delivered instantly</span>
+              <span className="text-lg">Instant Study Plan</span>
             </li>
           </ul>
 
@@ -84,8 +84,8 @@ const HeroSection = () => {
               className="w-16 h-16 rounded-full object-cover" 
             />
             <blockquote className="italic text-lg">
-              "GMAT success isn't magic; it's a skill-set anyone can master with the right playbook."
-              <footer className="text-gray-600 not-italic mt-1">— Arun Jagannathan, Co-Founder and Chief Mentor</footer>
+              "GMAT success is a learnable skill."
+              <footer className="text-gray-600 not-italic mt-1">— Arun Jagannathan</footer>
             </blockquote>
           </div>
         </div>
@@ -93,7 +93,7 @@ const HeroSection = () => {
         {/* Right Column - Form */}
         <div className="w-full md:w-2/5">
           <div className="bg-white rounded-xl shadow-xl p-6">
-            <h3 className="text-xl font-bold mb-4">Get your custom 8-week Fast-Track Plan</h3>
+            <h3 className="text-xl font-bold mb-4">Get Your Fast-Track Plan</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               {formStep === 1 ? (
@@ -193,3 +193,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
