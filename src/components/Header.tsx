@@ -21,9 +21,9 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <a href="tel:+918884544443" className="hidden md:flex items-center text-gray-700 hover:text-primary">
+          <a href="tel:+919019199800" className="hidden md:flex items-center text-gray-700 hover:text-primary">
             <Phone className="h-4 w-4 mr-2" />
-            <span>+91 888 454 4443</span>
+            <span>+91 901 919 9800</span>
           </a>
           <Button className="bg-primary hover:bg-primary/90">
             Book a Call

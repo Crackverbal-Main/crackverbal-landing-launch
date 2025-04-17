@@ -46,21 +46,21 @@ const TrustBar = () => {
   return (
     <section 
       id="trust" 
-      className={`py-6 bg-gray-50 ${
+      className={`py-8 bg-gray-50 ${
         isSticky ? 'fixed top-0 left-0 right-0 z-40 shadow-md' : ''
       } transition-all duration-300`}
     >
       <div className="container">
-        <div className="text-center mb-4">
-          <p className="text-lg font-medium">Our students have got admits to</p>
+        <div className="text-center mb-6">
+          <p className="text-xl font-medium text-secondary">Our students have got admits to</p>
         </div>
         
-        <div className="relative px-10">
+        <div className="relative px-4">
           <Carousel className="w-full" opts={{ align: "start", loop: true }}>
             <CarouselContent>
               {partners.map((partner, index) => (
-                <CarouselItem key={index} className="basis-1/5 md:basis-1/6 lg:basis-1/8">
-                  <div className="h-16 flex items-center justify-center p-2">
+                <CarouselItem key={index} className="basis-1/4 md:basis-1/5 lg:basis-1/6">
+                  <div className="h-20 flex items-center justify-center p-2">
                     <img 
                       src={partner.logo} 
                       alt={`${partner.name} logo`} 
@@ -70,12 +70,12 @@ const TrustBar = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-0" />
-            <CarouselNext className="absolute right-0" />
+            <CarouselPrevious className="absolute -left-4 bg-secondary text-white hover:bg-secondary/80" />
+            <CarouselNext className="absolute -right-4 bg-secondary text-white hover:bg-secondary/80" />
           </Carousel>
         </div>
 
-        <div className="mt-4 text-center">
+        <div className="mt-6 text-center">
           <p className="text-lg font-semibold text-primary">95% score-improvement success rate</p>
         </div>
       </div>

@@ -18,7 +18,7 @@ const ComparisonTable = () => {
     {
       id: 'instructors',
       feature: 'Instructors',
-      crackverbal: 'GMAT-only experts (770+)',
+      crackverbal: 'GMAT-only experts (1000+ hours of teaching experience)',
       videoCourses: 'Generalists',
       tutors: 'Mixed',
     },
