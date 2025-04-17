@@ -19,7 +19,7 @@ const SuccessStories = () => {
       id: 2,
       name: 'Akshat',
       image: '/lovable-uploads/ab088dd6-dbce-45d7-94f9-8e8d98d8984f.png',
-      quote: 'From struggling with Quant to scoring a 705 - the mentors really understand how to address each student's weaknesses.',
+      quote: "From struggling with Quant to scoring a 705 - the mentors really understand how to address each student's weaknesses.",
       score: '705',
       rating: 5
     },
@@ -35,7 +35,7 @@ const SuccessStories = () => {
       id: 4,
       name: 'Thejeshwar',
       image: '/lovable-uploads/8da22616-c1b2-438d-9b06-2982b37f8da9.png',
-      quote: 'CrackVerbal's strategy sessions helped me focus on what matters most. Thrilled with my 715 score!',
+      quote: "CrackVerbal's strategy sessions helped me focus on what matters most. Thrilled with my 715 score!",
       score: '715',
       rating: 5
     },
@@ -43,7 +43,7 @@ const SuccessStories = () => {
       id: 5,
       name: 'Kamali',
       image: '/lovable-uploads/da093d37-9d16-4fb9-9f4c-5310ca2750f3.png',
-      quote: 'The verbal strategies were game-changing. Couldn't have achieved 685 without the CrackVerbal team.',
+      quote: "The verbal strategies were game-changing. Couldn't have achieved 685 without the CrackVerbal team.",
       score: '685',
       rating: 5
     },
