@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container flex justify-between items-center py-3">
         <div className="flex items-center">
           <a href="/" className="text-2xl font-bold">
-            <img src="/lovable-uploads/97a4aab2-c4be-41e0-aca9-88e011385c1f.png" alt="CrackVerbal Logo" className="h-12" />
+            <img src="/lovable-uploads/52f30c3d-ac02-4b61-9bf9-75d854d46479.png" alt="CrackVerbal Logo" className="h-12" />
           </a>
         </div>
         
