@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  basePath: '/landing-launch-page',
+  assetPrefix: '/landing-launch-page',
+  trailingSlash: true, // Add this to handle trailing slashes consistently
   // your other existing config options...
 }
 
