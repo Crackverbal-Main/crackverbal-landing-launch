@@ -1,20 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: '/landing-launch-page',
-  assetPrefix: '/landing-launch-page',
+  assetPrefix: '',  // Changed this to empty
   trailingSlash: true,
   images: {
     unoptimized: true,
     domains: ['crackverbal-landing-launch.vercel.app', 'crackverbal.com'],
   },
-  // Ensure static assets are handled correctly
-  experimental: {
-    optimizeCss: true,
-    optimizeImages: true,
-  },
-  webpack: (config) => {
-    config.output.publicPath = `/landing-launch-page/_next/`;
-    return config;
+  // Remove the webpack config as it might be interfering
+  async rewrites() {
+    return [
+      {
+        source: '/landing-launch-page/:path*',
+        destination: '/:path*',
+      },
+    ];
   },
 }
 
