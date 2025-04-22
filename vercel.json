@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/landing-launch-page/",
+      "permanent": true
+    }
+  ]
+}
