@@ -1,9 +1,14 @@
 {
-  "redirects": [
+  "builds": [
     {
-      "source": "/",
-      "destination": "/landing-launch-page/",
-      "permanent": true
+      "src": "dist/",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/landing-launch-page/(.*)",
+      "dest": "/landing-launch-page/$1"
     }
   ]
 }
